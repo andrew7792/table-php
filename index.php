@@ -2,14 +2,6 @@
 //    echo "Test Wordpress Theme <br>"."\n";
 
 $card = [
-    "Dannie" => [
-        "First Name" => "First Name:",
-        "Last Name" => "Last Name:",
-        "Years" => "Years:",
-        "Salary" => "Salary, ($):",
-        "Position" => "Position:",
-        "Expirience" => "Expirience, (years):",
-    ],
     "Васильев" => [
         "Имя" => "Иван",
         "Фамилия" => "Васильев",
@@ -61,11 +53,15 @@ $card = [
 ];
 echo '<table cellpadding="5" cellspacing="0" border="1">';
 foreach ($card as $key => $value) {
+    if();{
 
-    echo '<tr>'/*. $key . "\n"*/;
-    foreach ($value as $key_a => $value_a) {
-        echo '<td>'./* $key_a . " => " .*/ $value_a ."\n".'</td>';
+        echo '<tr>'/*. $key . "\n"*/
+        ;
+        foreach ($value as $key_a => $value_a) {
+            echo '<td>' ./* $key_a . " => " .*/
+                $value_a . "\n" . '</td>';
+        }
+        echo '</tr>';
     }
-    echo '</tr>';
 }
 echo '</table>';
