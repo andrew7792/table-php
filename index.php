@@ -53,15 +53,20 @@ $card = [
 ];
 echo '<table cellpadding="5" cellspacing="0" border="1">';
 foreach ($card as $key => $value) {
-    if();{
 
-        echo '<tr>'/*. $key . "\n"*/
-        ;
-        foreach ($value as $key_a => $value_a) {
+    echo '<tr>'/*. $key . "\n"*/;
+
+    foreach ($value as $key_a => $value_a) {
+
+        if($key_a["Зарплата"] > 1000 && $key_a['Опыт'] < 5 ){
+
             echo '<td>' ./* $key_a . " => " .*/
+
                 $value_a . "\n" . '</td>';
+
         }
-        echo '</tr>';
     }
+    echo '</tr>';
 }
+
 echo '</table>';
