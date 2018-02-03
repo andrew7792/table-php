@@ -1,182 +1,128 @@
 <?php
-//    echo "Test Wordpress Theme <br>"."\n";
-
-$card = [
-    "Васильев" => [
-        "Имя" => "Иван",
-        "Фамилия" => "Васильев",
-        "Год рождения" => "1996",
-        "Зарплата" => "1500",
-        "Должность" => "Программист",
-        "Опыт" => "3,5",
+$staff = [
+    [
+        "first_name" => "Иван",
+        "last_name" => "Васильев",
+        "born" => 1996,
+        "hired" => 2017,
+        "job" => "Программист",
+        "salary" => 1500,
+        "experience" => 3, 5
     ],
-    "Мищенко" => [
-        "Имя" => "Артем",
-        "Фамилия" => "Мищенко",
-        "Год рождения" => " ",
-        "Зарплата" => "300",
-        "Должность" => "Стажер",
-        "Опыт" => "0,5",
+    [
+        "first_name" => "Артем",
+        "last_name" => "Васильев",
+        "born" => 1990,
+        "hired" => 2015,
+        "job" => "Программист",
+        "salary" => 2500,
+        "experience" => 6, 5
     ],
-    "Герасимова"=> [
-        "Имя" => "Анна",
-        "Фамилия" => "Герасимова",
-        "Год рождения" => " ",
-        "Зарплата" => "800",
-        "Должность" => "Бухгалтер",
-        "Опыт" => "8",
+    [
+        "first_name" => "Иллья",
+        "last_name" => "Моргунов",
+        "born" => 1999,
+        "hired" => 2017,
+        "job" => "Стажер",
+        "salary" => 200,
+        "experience" => 0, 3
     ],
-    "Анзин" => [
-        "Имя" => "Максим",
-        "Фамилия" => "Анзин",
-        "Год рождения" => " ",
-        "Зарплата" => "4000",
-        "Должность" => "Директор",
-        "Опыт" => "5",
+    [
+        "first_name" => "Александр",
+        "last_name" => "Мищенко",
+        "born" => 1982,
+        "hired" => 2013,
+        "job" => "СТО",
+        "salary" => 3500,
+        "experience" => 8
     ],
-    "Фролова" => [
-        "Имя" => "Ирина",
-        "Фамилия" => "Фролова",
-        "Год рождения" => " ",
-        "Зарплата" => "300",
-        "Должность" => "Дизайнер",
-        "Опыт" => "3",
+    [
+        "first_name" => "Анна",
+        "last_name" => "Герасимова",
+        "born" => 1978,
+        "hired" => 2013,
+        "job" => "Бухгалтер",
+        "salary" => 800,
+        "experience" => 12
     ],
-    "Стоянова" => [
-        "Имя" => "Евдокия",
-        "Фамилия" => "Стоянова",
-        "Год рождения" => " ",
-        "Зарплата" => "200",
-        "Должность" => "Уборщица",
-        "Опыт" => "3",
-    ]
+    [
+        "first_name" => "Ирина",
+        "last_name" => "Фролова",
+        "born" => 1998,
+        "hired" => 2016,
+        "job" => "Дизайнер",
+        "salary" => 850,
+        "experience" => 2
+    ],
+    [
+        "first_name" => "Евдокия",
+        "last_name" => "Стоянова",
+        "born" => 1965,
+        "hired" => 2014,
+        "job" => "Уборщица",
+        "salary" => 250,
+        "experience" => ""
+    ],
+    [
+        "first_name" => "Игорь",
+        "last_name" => "Артюхов",
+        "born" => 1980,
+        "hired" => 2013,
+        "job" => "Директор",
+        "salary" => 3250,
+        "experience" => 10
+    ],
 ];
-echo '<table cellpadding="5" cellspacing="0" border="1">';
-foreach ($card as $key => $value) {
-
-    echo '<tr>'/*. $key . "\n"*/;
-
-    foreach ($value as $key_a => $value_a) {
-
-        while($value_a > 1000 /*&& $key_a['Опыт'] < 5*/){
-
-            echo '<td>' . "$key_a" . "$value_a";
-
-                $value_a . "\n" . '</td>';
-
-        }
-
-    }
-    echo '</tr>';
-}
-
-echo '</table>';
 ?>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <?php
+            $header = ["first_name" => "Name",
+                "last_name" => "surname",
+                "born" => "birthday",
+                "hired" => 2016,
+                "job" => "years",
+                "salary" => "how_much",
+                "experience" => "years"
+            ];
+            $html = <<<HTML
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>{$header['first_name']}</th>
+            <th>{$header['last_name']}</th>
+            <th>{$header['born']}</th>
+            <th>{$header['hired']}</th>
+            <th>{$header['job']}</th>
+            <th>{$header['salary']}</th>
+            <th>{$header['experience']}</th>
+        </tr>
+</thead>
+<tbody>
+HTML;
+foreach($staff as $item){
+    $html = <<<HTML
 
-<!--1.Дан массив с элементами 'html', 'css', 'php', 'js', 'jq'. -->
-<!--С помощью цикла foreach выведите эти слова в столбик.-->
-<?php
-$arr = ['html', 'css', 'php', 'js', 'jq'];
+        <tr>
+            <th>{$header['first_name']}</th>
+            <th>{$header['last_name']}</th>
+            <th>{$header['born']}</th>
+            <th>{$header['hired']}</th>
+            <th>{$header['job']}</th>
+            <th>{$header['salary']}</th>
+            <th>{$header['experience']}</th>
+        </tr>
 
-foreach($arr as $element){
-echo $element.'<br>';
-}?>
-2:20:02 PM
-<!--2.Дан массив с элементами 1, 2, 3, 4, 5. -->
-<!--С помощью цикла foreach найдите сумму элементов этого массива. Запишите ее в переменную $result.-->
-<?php
-$arr = [1, 2, 3, 4, 5];
-
-$result = 0;
-
-foreach($arr as $element){
-$result += $element ;
+HTML;
 }
-echo $result;
-?>
-2:22:56 PM
-<!--3.Дан массив с элементами 1, 2, 3, 4, 5. С помощью цикла foreach найдите сумму -->
-<!--квадратов элементов этого массива. Результат запишите переменную $result.-->
-<?php
-$arr = [1, 2, 3, 4, 5];
+$html .= "</tbody>\n
+</table>";
+            echo $html;
 
-$result = 0;
-
-foreach($arr as $element){
-$result += $element*$element ;//1+4+9+16+25=55
-}
-echo $result;
-?>
-2:28:33 PM
-<!--4.Дан массив $arr. С помощью цикла foreach выведите на экран столбец -->
-<!--ключей и элементов в формате 'green - зеленый'.-->
-
-<?php
-$arr = ['green'=>'зеленый', 'red'=>'красный','blue'=>'голубой'];
-
-foreach($arr as $key => $element){
-echo $key.' - '.$element.'<br>' ;
-}
-?>
-//2:31:52 PM
-//5.Дан массив $arr с ключами 'Коля', 'Вася', 'Петя' и с элементами '200', '300', '400'. -->
-//С помощью цикла foreach выведите на экран столбец строк такого формата: 'Коля - зарплата 200 долларов.'.-->
-
-<?php
-$arr = ['Коля'=>'200', 'Вася'=>'300', 'Петя'=>'400'];
-
-foreach($arr as $key => $element){
-echo $key.' - зарплата '.$element. ' долларов.'.'<br>' ;
-}
-?>
-//2:37:29 PM
-//6.Решите эти задачи сначала через цикл while, а затем через цикл for.-->
-//Выведите столбец чисел от 1 до 100. -->
-
-<?php
-$i= 1;
-while($i<=100){
-echo $i.'<br>';
-$i++;
-}
-?>
-<?php
-
-for( $i= 1;$i<=100;$i++){
-echo $i.'<br>';
-}
-?>
-2:38:42 PM
-<!--7.Решите эти задачи сначала через цикл while, а затем через цикл for.-->
-<!--Выведите столбец чисел от 11 до 33. -->
-
-<?php
-$i= 11;
-while($i<=33){
-echo $i.'<br>';
-$i++;
-}
-?>
-<?php
-
-for( $i= 11;$i<=33;$i++){
-echo $i.'<br>';
-}
-?>
-2:42:59 PM
-<!--8.Решите эти задачи сначала через цикл while, а затем через цикл for.-->
-<!--Выведите столбец четных чисел в промежутке от 0 до 100. -->
-
-<?php
-$i= 0;
-while($i<=100){
-echo $i.'<br>';
-$i+=2;
-}
-?>
-<?php
-
-for( $i= 0;$i<=100;$i+=2){
-echo $i.'<br>';
-}
-?>
+            ?>
+        </div>
+    </div>
+</div>
+</body>
