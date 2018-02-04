@@ -103,6 +103,7 @@ $staff = [
 <tbody>
 HTML;
 foreach($staff as $item){
+    // Вместо конкатенации данных ты каждый раз заносиш новое значение
     $html = <<<HTML
 
         <tr>
