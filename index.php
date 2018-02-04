@@ -106,6 +106,7 @@ foreach($staff as $item){
     $html = <<<HTML
 
         <tr>
+        //Почему ты работаешт с переменной $header??? Ведь ты перебираешь $staff и должен работать с $item
             <th>{$header['first_name']}</th>
             <th>{$header['last_name']}</th>
             <th>{$header['born']}</th>
